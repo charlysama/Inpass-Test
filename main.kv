@@ -1,0 +1,64 @@
+#:include kv/homescreen.kv
+#:include kv/settingscreen.kv
+#:include kv/peso.kv
+#:include kv/fotos.kv
+#:include kv/actividad.kv
+#:include kv/changeavatar.kv
+#:include kv/loginscreen.kv
+#:include kv/addscreen.kv
+#:include kv/addactividad.kv
+#:include kv/perfil.kv
+#:include kv/vPerfil.kv
+#:include kv/listascreen.kv
+#:include kv/paciente_actividades.kv
+#:include kv/paciente_peso.kv
+#:include kv/paciente_perfil.kv
+GridLayout:
+	cols:1
+	ScreenManager:
+		id: screen_manager
+		LoginScreen:
+			name: "LoginScreen"
+			id: LoginScreen
+		HomeScreen:
+			name: "HomeScreen"
+			id: HomeScreen
+		FotoScreen:
+			name:"FotoScreen"
+			id: FotoScreen
+		PesoScreen
+			name:"PesoScreen"
+			id: PesoScreen
+		ActScreen:
+			name:"ActScreen"
+			id: ActScreen
+		SettingScreen
+			name:"SettingScreen"
+			id: SettingScreen
+		ChangeScreen
+			name:"ChangeScreen"
+			id: ChangeScreen
+		AddScreen
+			name:"AddScreen"
+			id: AddScreen
+		PerfilScreen
+			name:"PerfilScreen"
+			id: PerfilScreen
+		vPerfilScreen
+			name:"vPerfilScreen"
+			id: vPerfilScreen
+		AddActividadScreen
+			name:"AddActividadScreen"
+			id: AddActividadScreen
+		ListaScreen
+			name:"ListaScreen"
+			id: ListaScreen
+		PacActScreen
+			name:"PacActScreen"
+			id: PacActScreen
+		PacPesoScreen
+			name:"PacPesoScreen"
+			id: PacPesoScreen
+		PacPerfilScreen
+			name:"PacPerfilScreen"
+			id: PacPerfilScreen
