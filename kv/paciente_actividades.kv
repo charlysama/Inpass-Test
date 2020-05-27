@@ -1,0 +1,68 @@
+<PacActScreen>:
+	FloatLayout:
+		canvas:
+			Color:
+				rgb: utils.get_color_from_hex("#3d3c4d")
+
+		GridLayout:
+			canvas:
+				Color:
+					rgb:utils.get_color_from_hex("#8887ab")
+				Rectangle:
+					size:self.size
+					pos: self.pos
+			rows: 5
+
+			pos_hint: {"top":.95,"right":.6}
+			size_hint:0.15, 0.15
+			Image:
+			    id : pac_avatar
+			    #source: "icon/treadmill-1.png"
+		GridLayout:
+			canvas:
+				Color:
+					rgb: utils.get_color_from_hex("#3d3c4d")
+				Rectangle:
+					size:self.size
+					pos: self.pos
+			cols: 4
+			pos_hint: {"top":.75,"left":1}
+			size_hint:1, 0.1
+			Image:
+				source: "icon/008-calendar.png"
+
+			Image:
+				source: "icon/treadmill-2.png"
+			Image:
+				source: "icon/014-customer service.png"
+			Image:
+				source: "icon/022-thumb up.png"
+
+		ScrollView:
+		    pos_hint: {"top":.65,"left":1}
+			size_hint: 1, 0.5
+
+		    GridLayout:
+			    id: pac_act_grid_banner
+			    size_hint_y: None
+                spacing: 10,10
+                height: self.minimum_height
+			    row_default_height: '100dp'
+			    row_force_default: True
+			    canvas:
+				    Color:
+					    rgb: utils.get_color_from_hex("#8887ab")
+				    Rectangle:
+					    size:self.size
+					    pos: self.pos
+			    cols: 1
+
+		GridLayout:
+			cols:1
+			pos_hint: {"top":.1,"right":0.5}
+            size_hint:0.1, 0.1
+			ImageButton:
+				source: "icon/home.png"
+
+				on_release:
+					app.change_screen("ListaScreen")

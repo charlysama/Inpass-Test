@@ -1,0 +1,59 @@
+<PacPerfilScreen>
+
+    GridLayout:
+        canvas:
+            Color:
+                rgb: utils.get_color_from_hex("#3d3c4d")
+            Rectangle:
+                size:self.size
+                pos: self.pos
+        rows: 5
+        pos_hint: {"top":.95,"right":.3}
+        size_hint: 0.2, 0.8
+        spacing: 30,30
+        Image:
+            source: "icon/basketball-jersey.png"
+        Image:
+            source: "icon/019-documents.png"
+        Image:
+            source: "icon/033-location.png"
+        Image:
+            source: "icon/039-phone call.png"
+    GridLayout:
+        canvas:
+            Color:
+                rgb: utils.get_color_from_hex("#3d3c4d")
+            Rectangle:
+                size:self.size
+                pos: self.pos
+        rows: 5
+        pos_hint: {"top":.95,"right":.9}
+        size_hint: 0.6, 0.8
+        spacing: 30,30
+
+        Label:
+            text: "Nombre"
+            id: Nombre
+
+        Label:
+            text: "Apellido"
+            id: Apellido
+
+        Label:
+            text: "Direccion"
+            id: Direccion
+
+        Label:
+            text: "Telefono"
+            id: Telefono
+
+
+    GridLayout:
+		cols:1
+		pos_hint: {"top":.11,"right":0.5}
+        size_hint:0.1, 0.1
+		ImageButton:
+			source: "icon/home.png"
+
+			on_release:
+				app.change_screen("ListaScreen")

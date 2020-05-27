@@ -1,0 +1,102 @@
+#: import utils kivy.utils
+
+<HomeScreen>:
+	FloatLayout:
+		canvas:
+			Color: 
+				rgb: utils.get_color_from_hex("#3d3c4d")
+	
+		GridLayout:
+			canvas:
+				Color: 
+					rgb:utils.get_color_from_hex("#8887ab")
+				Rectangle:
+					size:self.size
+					pos: self.pos
+			rows: 1
+			cols: 1
+			pos_hint: {"top":.9,"left":1}
+			size_hint:1, 0.2
+			ImageButton:
+				source: "icon/avatar/man.png"
+				id: avatar_image
+				on_press:
+                    app.change_screen("vPerfilScreen")
+					
+		GridLayout:
+			canvas:
+				Color: 
+					rgb: utils.get_color_from_hex("#3d3c4d")
+				Rectangle:
+					size:self.size
+					pos: self.pos
+			cols: 2
+			pos_hint: {"top":.6,"left":1}
+			size_hint:1, 0.15
+			ImageButton:
+				source: "icon/treadmill-1.png"
+				on_press:
+					self.source = "icon/treadmill.png"
+					print("act")
+				on_release:
+					self.source = "icon/treadmill-1.png"
+					print("act2")
+					app.change_screen("ActScreen")
+		
+			ImageButton:
+				source: "icon/scale.png"
+				on_press:
+					self.source = "icon/scale2.png"
+					print("peso")
+				on_release:
+					self.source = "icon/scale.png"
+					print("peso2")
+					app.change_screen("PesoScreen")
+		GridLayout
+			canvas:
+				Color: 
+					rgb:utils.get_color_from_hex("#3d3c4d")
+				Rectangle:
+					size:self.size
+					pos: self.pos
+			cols: 2
+			rows: 2
+			pos_hint: {"top":.4,"left":1}
+			size_hint:1, 0.15
+			ImageButton:
+				source: "icon/photo-camera.png"
+				on_press:
+					self.source = "icon/photo.png"
+					print("PP")
+				on_release:
+					self.source = "icon/photo-camera.png"
+					print("Foto")
+					app.change_screen("FotoScreen")
+			ImageButton:
+				source: "icon/bar-chart.png"
+				on_press:
+					self.source = "icon/bar-chart2.png"
+					print("Bar1")
+				on_release:
+					self.source = "icon/bar-chart.png"
+					print("Bar2")
+		GridLayout
+			canvas:
+				Color: 
+					rgb:utils.get_color_from_hex("#3d3c4d")
+				Rectangle:
+					size:self.size
+					pos: self.pos
+			rows: 1
+			pos_hint: {"top":.2,"left":1}
+			size_hint:1, 0.15
+			ImageButton:
+				source: "icon/settings.png"
+				on_press:
+					self.source = "icon/settings2.png"
+					print("Sett")
+				on_release:
+					self.source = "icon/settings.png"
+					print("Sett2")
+					app.change_screen("SettingScreen")
+		

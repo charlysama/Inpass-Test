@@ -1,0 +1,50 @@
+<LoginScreen>:
+    FloatLayout:
+
+        Label:
+            id: my_id_label
+            size_hint: 1, 0.3
+            pos_hint: {"top":1, "right":1}
+            text: "Login Screen"
+        TextInput:
+            id:login_email
+            hint_text: "email"
+            size_hint: 0.8, 0.1
+            pos_hint: {"top":.8,"right":.9}
+        TextInput:
+            id:password
+            hint_text: "password"
+            password: True
+            size_hint: 0.8, 0.1
+            pos_hint: {"top":.6,"right":.9}
+        Label:
+            id:login_message
+            color:(1,0,0,1)
+            size_hint: .8, .1
+            pos_hint: {"top":.1,"right":.9}
+        LabelButton:
+            canvas.before:
+                Color:
+                    rgb: utils.get_color_from_hex("#3983F2") if self.state =='normal' else utils.get_color_from_hex("#3944AA")
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            text: "[u]Log in[/u]"
+            markup: True
+            size_hint: .8, .1
+            pos_hint: {"top":.4,"right":.9}
+            on_release:
+                app.firedata.sign_in(login_email.text,password.text)
+        LabelButton:
+            canvas.before:
+                Color:
+                    rgb: utils.get_color_from_hex("#3983F2") if self.state =='normal' else utils.get_color_from_hex("#3944AA")
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            text: "[u]New User[/u]"
+            markup: True
+            size_hint: .8, .1
+            pos_hint: {"top":.28,"right":.9}
+            on_release:
+                app.firedata.sign_up(login_email.text,password.text)

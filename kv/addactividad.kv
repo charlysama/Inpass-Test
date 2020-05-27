@@ -1,0 +1,79 @@
+<AddActividadScreen>
+    GridLayout:
+        canvas:
+            Color:
+                rgb: utils.get_color_from_hex("#3d3c4d")
+            Rectangle:
+                size:self.size
+                pos: self.pos
+        rows: 5
+        pos_hint: {"top":.95,"right":.3}
+        size_hint: 0.2, 0.8
+        spacing: 30,30
+        Image:
+            source: "icon/008-calendar.png"
+
+
+        Image:
+            source: "icon/treadmill-2.png"
+
+
+        Image:
+            source: "icon/014-customer service.png"
+
+
+        Image:
+            source: "icon/022-thumb up.png"
+    GridLayout:
+        canvas:
+            Color:
+                rgb: utils.get_color_from_hex("#3d3c4d")
+            Rectangle:
+                size:self.size
+                pos: self.pos
+        rows: 5
+        pos_hint: {"top":.95,"right":.9}
+        size_hint: 0.6, 0.8
+        spacing: 30,30
+        TextInput:
+            hint_text: "dd/mm/yyyy"
+            id: FechaAct
+            on_text:
+                self.background_color = (0.9 ,0.9,0.9,1)
+        TextInput:
+            hint_text: "Tipo de actividad"
+            id: TipoAct
+            on_text:
+                self.background_color = (0.9 ,0.9,0.9,1)
+        TextInput:
+            hint_text: "Encargado de la Actividad"
+            id: EncargadoAct
+            on_text:
+                self.background_color = (0.9 ,0.9,0.9,1)
+        TextInput:
+            hint_text: "Breve descripcion"
+            id: DescripcionAct
+
+    GridLayout:
+		rows: 2
+		pos_hint: {"top":.11,"right":0.4}
+        size_hint:0.1, 0.1
+
+		ImageButton:
+			source: "icon/cloud-computing.png"
+			on_release:
+				app.add_act()
+
+		LabelButton:
+            text: "Cargar Actividad"
+			on_release:
+				app.add_act()
+    GridLayout:
+		cols:1
+		pos_hint: {"top":.11,"right":0.7}
+        size_hint:0.1, 0.1
+		ImageButton:
+			source: "icon/home.png"
+
+			on_release:
+				app.change_screen("ActScreen")

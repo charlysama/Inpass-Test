@@ -1,0 +1,29 @@
+<AddScreen>
+    FloatLayout:
+
+		TextInput:
+		    id:add_input
+		    hint_text: "Type ID here"
+		    size_hint: .7 , .1
+		    pos_hint: {"top":0.8, "right":0.8}
+		Label:
+		    id: add_label
+		    color:(1,0,0,1)
+		    size_hint: .5 , .1
+		    pos_hint: {"top":0.5, "right":0.8}
+		ImageButton:
+			source: "icon/045-order tracking.png"
+            size_hint: .2 , .1
+		    pos_hint: {"top":0.8, "right":1}
+			on_release:
+				app.add_ID(add_input.text)
+
+	GridLayout:
+		cols:1
+		pos_hint: {"top":.21,"right":0.5}
+        size_hint:0.1, 0.1
+		ImageButton:
+			source: "icon/home.png"
+
+			on_release:
+				app.change_screen("SettingScreen")

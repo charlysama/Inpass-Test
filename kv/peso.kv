@@ -1,0 +1,76 @@
+<PesoScreen>:
+	FloatLayout:
+		canvas:
+			Color: 
+				rgb: utils.get_color_from_hex("#3d3c4d")
+
+		GridLayout:
+			canvas:
+				Color: 
+					rgb:utils.get_color_from_hex("#8887ab")
+				Rectangle:
+					size:self.size
+					pos: self.pos
+
+			cols: 2
+
+			pos_hint: {"top":.95,"right":.8}
+			size_hint:.5, .1
+
+			ImageButton:
+			    size_hint:0.1, 0.1
+				source: "icon/weight.png"
+				on_release:
+				    app.add_peso()
+
+			TextInput:
+			    size_hint:.4, 0.1
+                id: peso_nuevo
+				hint_text: 'Poner peso en KG'
+				on_text:
+                    self.background_color = (0.9 ,0.9,0.9,1)
+
+					
+		GridLayout:
+			canvas:
+				Color: 
+					rgb: utils.get_color_from_hex("#3d3c4d")
+				Rectangle:
+					size:self.size
+					pos: self.pos
+			cols: 2
+			pos_hint: {"top":.8,"left":1}
+			size_hint:1, 0.1
+			Image:
+				source: "icon/scale.png"
+
+			Image:
+				source: "icon/008-calendar.png"
+		ScrollView:
+		    pos_hint: {"top":.7,"left":1}
+			size_hint: 1, 0.6
+
+		    GridLayout:
+			    id: peso_grid_banner
+			    size_hint_y: None
+                spacing: 10,10
+                height: self.minimum_height
+			    row_default_height: '100dp'
+			    row_force_default: True
+			    canvas:
+				    Color:
+					    rgb: utils.get_color_from_hex("#8887ab")
+				    Rectangle:
+					    size:self.size
+					    pos: self.pos
+			    cols: 1
+
+        GridLayout:
+			cols:1
+			pos_hint: {"top":.1,"right":0.5}
+            size_hint:0.1, 0.1
+			ImageButton:
+				source: "icon/home.png"
+
+				on_release:
+					app.change_screen("HomeScreen")

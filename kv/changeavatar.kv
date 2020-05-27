@@ -1,0 +1,27 @@
+<ChangeScreen>:
+    FloatLayout:
+    	canvas:
+			Color:
+				rgb: utils.get_color_from_hex("#3d3c4d")
+	ScrollView:
+	    GridLayout:
+	        id: avatar_grid
+	        cols:3
+	        pos_hint: {"top":1,"right":1}
+            size_hint: 1 , 0.8
+	        id:avatar_grid
+	        size_hint_y:None
+            spacing: 10,10
+            height: self.minimum_height
+		    row_default_height: '100dp'
+		    row_force_default: True
+
+    GridLayout:
+		cols:1
+		pos_hint: {"top":.1,"right":0.5}
+        size_hint:0.1, 0.1
+	    ImageButton:
+			source: "icon/home.png"
+
+			on_release:
+				app.change_screen("SettingScreen")
